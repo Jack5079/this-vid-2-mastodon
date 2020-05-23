@@ -1,6 +1,6 @@
 import { Masto } from 'masto'
 import { existsSync as exists, readFileSync as readFile } from 'fs'
-import FormData from 'form-data'
+import FormData from 'formdata-node'
 import fetch from 'node-fetch'
 // turns out dotenv doesn't work with modules so uhh
 if (exists('./.env')) {
