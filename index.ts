@@ -32,15 +32,13 @@ async function main () {
       if (status.mediaAttachments[0]?.type === 'video') {
         // A video is attached
         const url = status.mediaAttachments[0]?.url
-        const buffer = await fetch(url).then((res) => res.buffer())
-        const form = new FormData()
-        form.append('video', buffer)
-        let downdata = await fetch("https://projectlounge.pw/thisvid2/upload", {
+        const file = await fetch(url).then((res) => res.buffer())
+        var fd = new FormData()
+        fd.append("video", file)
+        const downdata = await fetch("/thisvid2/upload", {
           method: "post",
-          body: form
-        }).then(res => res.text())
-        console.log(downdata)
-        downdata = JSON.parse(downdata)
+          body: fd
+        }).then(res => res.json())
         if (!downdata.error) {
           const downloaded = fetch(downdata.data).then(res => res.buffer())
           const attachment = await masto.createMediaAttachment({
