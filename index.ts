@@ -32,7 +32,7 @@ async function main () {
       if (status.mediaAttachments[0]?.type === 'video') {
         // A video is attached
         const url = status.mediaAttachments[0]?.url
-        const file = await fetch(url).then((res) => res.buffer())
+        const file = await fetch(url).then((res) => res.blob())
         var fd = new FormData()
         fd.append("video", file)
         const downdata = await fetch("https://projectlounge.pw/thisvid2/upload", {
