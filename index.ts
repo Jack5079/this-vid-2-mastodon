@@ -36,7 +36,7 @@ async function main () {
         var fd = new FormData()
         fd.append("video", file)
         const downdata = await fetch("https://projectlounge.pw/thisvid2/upload", {
-          method: "post",
+          method: "POST",
           body: fd
         }).then(res => res.json())
         if (!downdata.error) {
