@@ -1,0 +1,23 @@
+{
+  "name": "this_vid2_mastodon",
+  "version": "1.0.0",
+  "description": "I ported this_vid2 to Mastodon. I'm sorry.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jack <hello@5079.ml>",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^14.0.5",
+    "form-data": "^3.0.0",
+    "masto": "^3.3.0",
+    "node-fetch": "^2.6.0",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.3"
+  }
+}
