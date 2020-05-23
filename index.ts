@@ -35,7 +35,7 @@ async function main () {
         const file = await fetch(url).then((res) => res.buffer())
         var fd = new FormData()
         fd.append("video", file)
-        const downdata = await fetch("/thisvid2/upload", {
+        const downdata = await fetch("https://projectlounge.pw/thisvid2/upload", {
           method: "post",
           body: fd
         }).then(res => res.json())
