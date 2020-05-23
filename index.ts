@@ -52,6 +52,7 @@ async function main () {
             status: "Here's the video!",
             visibility: 'public',
             mediaIds: [attachment.id],
+            inReplyToId: status.id
           })
         }
       }
